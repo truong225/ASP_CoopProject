@@ -1,0 +1,241 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage2.master.cs" Inherits="MasterPage2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Đồ án tốt nghiệp</title>
+
+    <!-- Bootstrap -->
+    <link href="script/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link href="script/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- NProgress -->
+    <link href="script/vendors/nprogress/nprogress.css" rel="stylesheet" />
+    <!-- iCheck -->
+    <link href="script/vendors/iCheck/skins/flat/green.css" rel="stylesheet" />
+
+    <!-- bootstrap-progressbar -->
+    <link href="script/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" />
+    <!-- JQVMap -->
+    <link href="script/vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
+    <!-- bootstrap-daterangepicker -->
+    <link href="script/vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" />
+
+    <!-- Custom Theme Style -->
+    <link href="script/build/css/custom.min.css" rel="stylesheet" />
+
+    <link href="script/searchStyle.css" type="text/css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="nav-md">
+    <form id="form1" runat="server">
+        <div class="container body">
+            <div class="main_container">
+                <div class="col-md-3 left_col">
+                    <div class="left_col scroll-view">
+                        <div class="navbar nav_title" style="border: 0;">
+                            <asp:HyperLink runat="server" href="index.html" class="site_title">
+                                <img src="images/haui_lg.png" width="45px" height="45px" alt="" /><span> Đồ án tốt nghiệp</span></asp:HyperLink>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <!-- menu profile quick info -->
+                        <%--<div class="profile clearfix">
+                            <div class="profile_pic">
+                                <img src="anh/1.jpg" alt="..." class="img-circle profile_img" />
+                            </div>
+                            <div class="profile_info">
+                                <span>Xin chào,</span>
+                                <h2>Trường Xuân</h2>
+                            </div>
+                        </div>--%>
+                        <!-- /menu profile quick info -->
+
+                        <br />
+
+                        <!-- sidebar menu -->
+                        <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                            <div class="menu_section">
+                                <h3>Chung</h3>
+                                <ul class="nav side-menu">
+                                    <li>
+                                        <asp:HyperLink runat="server" runat="server" href="Default.aspx"><i class="fa fa-home"></i>Trang chủ <span class="fa fa-chevron-down"></span></asp:HyperLink>
+                                    </li>
+                                    <li>
+                                        <asp:HyperLink runat="server"><i class="fa fa-edit"></i>Tài liệu <span class="fa fa-chevron-down"></span></asp:HyperLink>
+                                        <ul class="nav child_menu">
+                                            <li>
+                                                <asp:HyperLink runat="server" href="task.html">Danh sách</asp:HyperLink></li>
+                                            <li>
+                                                <asp:HyperLink runat="server" href="rate-GV.html">Upload</asp:HyperLink></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="menu_section">
+                                <h3>Cá nhân</h3>
+                                <ul class="nav side-menu">
+                                    <li>
+                                        <asp:HyperLink runat="server"><i class="fa fa-bug"></i>Thông tin cá nhân <span class="fa fa-chevron-down"></span></asp:HyperLink>
+                                        <ul class="nav child_menu">
+                                            <li>
+                                                <asp:HyperLink runat="server" href="person information.html">Xem thông tin cá nhân</asp:HyperLink></li>
+                                            <li>
+                                                <asp:HyperLink runat="server" href="change_Password.html">Đổi mật khẩu</asp:HyperLink></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <asp:HyperLink runat="server" href="contact.html"><i class="fa fa-comments-o"></i><span class="fa fa-chevron-down"></span>Liên hệ</asp:HyperLink></li>
+                                    <li>
+                                        <asp:HyperLink runat="server" href="login.html"><i class="fa fa-sign-out"></i>Đăng xuất <span class="fa fa-chevron-down"></span></asp:HyperLink>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <!-- /sidebar menu -->
+
+                        <!-- /menu footer buttons -->
+                        <div class="sidebar-footer hidden-small">
+                            <asp:HyperLink runat="server" data-toggle="tooltip" data-placement="top" title="Settings">
+                                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                            </asp:HyperLink>
+                            <asp:HyperLink runat="server" data-toggle="tooltip" data-placement="top" title="FullScreen">
+                                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                            </asp:HyperLink>
+                            <asp:HyperLink runat="server" data-toggle="tooltip" data-placement="top" title="Lock">
+                                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                            </asp:HyperLink>
+                            <asp:HyperLink runat="server" data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                            </asp:HyperLink>
+                        </div>
+                        
+                        <!-- /menu footer buttons -->
+                    </div>
+                </div>
+
+                <!-- top navigation -->
+                <div class="top_nav">
+                    <div class="nav_menu">
+                        <nav>
+                            <div class="nav toggle">
+                                <asp:HyperLink runat="server" ID="menu_toggle"><i class="fa fa-bars"></i></asp:HyperLink>
+                            </div>
+
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="">
+                                    <asp:HyperLink runat="server" href="index.html" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <img src="images/avatar.jpg" alt="" />User Account
+                    <span class=" fa fa-angle-down"></span>
+                                    </asp:HyperLink>
+                                    <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                        <li>
+                                            <asp:HyperLink runat="server" href="person information.html">Thông tin cá nhân</asp:HyperLink></li>
+                                        <li>
+                                            <asp:HyperLink runat="server" href="setting.html">
+                                                <span class="badge bg-red pull-right">50%</span>
+                                                <span>Cài đặt</span>
+                                            </asp:HyperLink>
+                                        </li>
+                                        <li>
+                                            <asp:HyperLink runat="server" href="contact.html">Trợ giúp</asp:HyperLink></li>
+                                        <li>
+                                            <asp:HyperLink runat="server" href="login.html"><i class="fa fa-sign-out pull-right"></i>Đăng xuất</asp:HyperLink></li>
+                                    </ul>
+                                </li>
+                                <li align="center">
+                                    <%--<asp:HyperLink runat="server" href="index.html" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <asp:TextBox ID="txtSearch" runat="server"></asp:TextBox><img src="anh/Search.png" /><span class="search_init"></span>
+                                    </asp:HyperLink>--%>
+
+                                    <%/////////////////////// %>
+                                    <div class="container">
+                                        <div class="searchbox">
+                                            <asp:TextBox ID="txtSearch" runat="server" AutoCompleteType="Search" CssClass="searchbox-input" TextMode="Search" placeholder="Tìm kiếm..."></asp:TextBox>
+                                            <span class="searchbox-icon">
+                                                <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/anh/Search.png" OnClick="ImageButton1_Click" /></span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <!-- /top navigation -->
+
+                <!-- page content -->
+                <div class="right_col" role="main">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <!-- /page content -->
+
+                <!-- footer content -->
+                <footer>
+                    <div class="pull-right">
+                        Hệ thống quản lý đồ án tốt nghiệp Đại học Công Nghiệp Hà Nội
+                        <asp:HyperLink runat="server" href="https://colorlib.com">• Nhóm 4</asp:HyperLink>
+                    </div>
+                    <div class="clearfix"></div>
+                </footer>
+                <!-- /footer content -->
+            </div>
+        </div>
+
+        <!-- jQuery -->
+        <script src="script/vendors/jquery/dist/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="script/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+        <!-- FastClick -->
+        <script src="script/vendors/fastclick/lib/fastclick.js"></script>
+        <!-- NProgress -->
+        <script src="script/vendors/nprogress/nprogress.js"></script>
+        <!-- Chart.js -->
+        <script src="script/vendors/Chart.js/dist/Chart.min.js"></script>
+        <!-- gauge.js -->
+        <script src="script/vendors/gauge.js/dist/gauge.min.js"></script>
+        <!-- bootstrap-progressbar -->
+        <script src="script/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
+        <!-- iCheck -->
+        <script src="script/vendors/iCheck/icheck.min.js"></script>
+        <!-- Skycons -->
+        <script src="script/vendors/skycons/skycons.js"></script>
+        <!-- Flot -->
+        <script src="script/vendors/Flot/jquery.flot.js"></script>
+        <script src="script/vendors/Flot/jquery.flot.pie.js"></script>
+        <script src="script/vendors/Flot/jquery.flot.time.js"></script>
+        <script src="script/vendors/Flot/jquery.flot.stack.js"></script>
+        <script src="script/vendors/Flot/jquery.flot.resize.js"></script>
+        <!-- Flot plugins -->
+        <script src="script/vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
+        <script src="script/vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
+        <script src="script/vendors/flot.curvedlines/curvedLines.js"></script>
+        <!-- DateJS -->
+        <script src="script/vendors/DateJS/build/date.js"></script>
+        <!-- JQVMap -->
+        <script src="script/vendors/jqvmap/dist/jquery.vmap.js"></script>
+        <script src="script/vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
+        <script src="script/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
+        <!-- bootstrap-daterangepicker -->
+        <script src="script/vendors/moment/min/moment.min.js"></script>
+        <script src="script/vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
+
+        <!-- Custom Theme Scripts -->
+        <script src="script/build/js/custom.min.js"></script>
+
+        <script src="script/searchScript.js"></script>
+
+    </form>
+</body>
+</html>

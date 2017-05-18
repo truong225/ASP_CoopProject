@@ -1,0 +1,148 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html lang="vi" xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Quản lý đồ án</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link type="text/css" href="script/StyleSheet.css" rel="stylesheet" />
+
+    <link href="script/Login.css" type="text/css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style type="text/css">
+        .head {
+            width: 100%;
+            height: 698px;
+            background-image: url(http://localhost:50738/anh/logo-dai-hoc-cong-nghiep.jpg);
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        .auto-style1 {
+            width: 68px;
+        }
+
+        .auto-style2 {
+            width: 90px;
+        }
+
+        .auto-style3 {
+            width: 89px;
+        }
+
+        .auto-style5 {
+            width: 832px;
+        }
+
+        .auto-style6 {
+            width: 568px;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+        <div align="center" class="head">
+            <div align="center" style="width: 80%; background-color: #808080">
+
+
+                <div align="right">
+                    <asp:Table ID="Table1" runat="server" CssClass="list">
+                        <asp:TableRow>
+                            <asp:TableCell ID="celDangKy"><a href="~/DangKy.aspx">Đăng ký</a></asp:TableCell>
+                            <asp:TableCell ID="celDangNhap"><a href="~/DangNhap.aspx">Đăng nhập</a></asp:TableCell>
+                            <asp:TableCell ID="celDangXuat">
+                                <a href="~/DangNhap.aspx" onclick="<%Global.isLogin = false; %>">Đăng xuất</a>
+                            </asp:TableCell>
+                            <asp:TableCell><a href="LienHe.aspx">Liên hệ</a></asp:TableCell>
+                        </asp:TableRow>
+                    </asp:Table>
+                </div>
+
+                <div class="logoTittle">
+                    <p>
+                        <br />
+                        <font size="25px" color="white"><b>QUẢN LÝ ĐỒ ÁN</b></font>
+                    </p>
+                </div>
+
+                <div align="left" style="background-color: #2f4055;">
+                    <%--<asp:Table ID="Table2" runat="server" CssClass="list">
+                        <asp:TableRow>
+                            <asp:TableCell></asp:TableCell>
+                            <asp:TableCell Wrap="true"></asp:TableCell>
+                            <asp:TableCell></asp:TableCell>
+                            <asp:TableCell></asp:TableCell>
+                        </asp:TableRow>
+                    </asp:Table>--%>
+
+                    <table style="width: 100%;" class="list">
+                        <tr>
+                            <td class="auto-style1"><a href="Default.aspx">Home</a></td>
+                            <td class="auto-style2"><a href="Tailieu.aspx">Tài liệu</a></td>
+                            <td class="auto-style3"><a href="Upload.aspx">Upload</a></td>
+                            <td align="right">
+                                <asp:TextBox CssClass="search" ID="txtSearch" runat="server" AutoCompleteType="Search" TextMode="Search" Text="">
+                                </asp:TextBox>
+                                <asp:ImageButton ID="btnSearch" runat="server" ImageUrl="~/anh/Search.png" Height="20px" OnClick="btnSearch_Click" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="main">
+                    <div align="left">
+                        <table class="tableMain">
+                            <tr>
+                                <td style="width: 200px">
+                                    <%--<table class="toolMenu">
+                                        <tr>
+                                            <th>Danh mục</th>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                    </table>--%>
+                                    <asp:Menu ID="Menu1" runat="server" BackColor="#E3EAEB" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#666666" StaticSubMenuIndent="10px">
+                                        <DynamicHoverStyle BackColor="#666666" ForeColor="White" />
+                                        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                                        <DynamicMenuStyle BackColor="#E3EAEB" />
+                                        <DynamicSelectedStyle BackColor="#1C5E55" />
+                                        <Items>
+                                            <asp:MenuItem Text="Danh muc" Value="Danh muc"></asp:MenuItem>
+                                        </Items>
+                                        <StaticHoverStyle BackColor="#666666" ForeColor="White" />
+                                        <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                                        <StaticSelectedStyle BackColor="#1C5E55" />
+                                    </asp:Menu>
+                                </td>
+                                <td style="width: 800px">
+                                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                    </asp:ContentPlaceHolder>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <hr />
+                    <div style="background-color: white">
+                        <p class="footer"><b>TRƯỜNG ĐẠI HỌC CÔNG NGHIỆP HÀ NỘI</b></p>
+                        <p>Địa chỉ:Phường Minh Khai, Quận Bắc Từ Liêm, Thành Phố Hà Nội .</p>
+                        <p>
+                            Điện thoại: 84.4.37655121, Fax: 84.4.37655261, Email: 
+                        <a href="mailto:dhcnhn@haui.edu.vn">dhcnhn@haui.edu.vn</a> - 
+                        <a href="#">Rss</a>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

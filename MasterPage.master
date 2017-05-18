@@ -52,12 +52,12 @@
                 <div align="right">
                     <asp:Table ID="Table1" runat="server" CssClass="list">
                         <asp:TableRow>
-                            <asp:TableCell ID="celDangKy"><a href="~/DangKy.aspx">Đăng ký</a></asp:TableCell>
-                            <asp:TableCell ID="celDangNhap"><a href="~/DangNhap.aspx">Đăng nhập</a></asp:TableCell>
+                            <asp:TableCell ID="celDangKy"><asp:HyperLink runat="server" href="~/DangKy.aspx">Đăng ký</asp:HyperLink></asp:TableCell>
+                            <asp:TableCell ID="celDangNhap"><asp:HyperLink runat="server" href="~/DangNhap.aspx">Đăng nhập</asp:HyperLink></asp:TableCell>
                             <asp:TableCell ID="celDangXuat">
-                                <a href="~/DangNhap.aspx" onclick="<%Global.isLogin = false; %>">Đăng xuất</a>
+                                <asp:HyperLink runat="server" href="~/DangNhap.aspx" onclick="<%Global.isLogin = false; %>">Đăng xuất</asp:HyperLink>
                             </asp:TableCell>
-                            <asp:TableCell><a href="LienHe.aspx">Liên hệ</a></asp:TableCell>
+                            <asp:TableCell><asp:HyperLink runat="server" href="LienHe.aspx">Liên hệ</asp:HyperLink></asp:TableCell>
                         </asp:TableRow>
                     </asp:Table>
                 </div>
@@ -81,9 +81,9 @@
 
                     <table style="width: 100%;" class="list">
                         <tr>
-                            <td class="auto-style1"><a href="Default.aspx">Home</a></td>
-                            <td class="auto-style2"><a href="Tailieu.aspx">Tài liệu</a></td>
-                            <td class="auto-style3"><a href="Upload.aspx">Upload</a></td>
+                            <td class="auto-style1"><asp:HyperLink runat="server" href="Default.aspx">Home</asp:HyperLink></td>
+                            <td class="auto-style2"><asp:HyperLink runat="server" href="Tailieu.aspx">Tài liệu</asp:HyperLink></td>
+                            <td class="auto-style3"><asp:HyperLink runat="server" href="Upload.aspx">Upload</asp:HyperLink></td>
                             <td align="right">
                                 <asp:TextBox CssClass="search" ID="txtSearch" runat="server" AutoCompleteType="Search" TextMode="Search" Text="">
                                 </asp:TextBox>
@@ -135,8 +135,8 @@
                         <p>Địa chỉ:Phường Minh Khai, Quận Bắc Từ Liêm, Thành Phố Hà Nội .</p>
                         <p>
                             Điện thoại: 84.4.37655121, Fax: 84.4.37655261, Email: 
-                        <a href="mailto:dhcnhn@haui.edu.vn">dhcnhn@haui.edu.vn</a> - 
-                        <a href="#">Rss</a>
+                        <asp:HyperLink runat="server" href="mailto:dhcnhn@haui.edu.vn">dhcnhn@haui.edu.vn</asp:HyperLink> - 
+                        <asp:HyperLink runat="server" href="#">Rss</asp:HyperLink>
                         </p>
 
                     </div>

@@ -10,7 +10,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Đồ án tốt nghiệp</title>
+    <title>Quản lý và tra cứu đồ án</title>
+
+    <link rel="icon" href="anh/haui_lg.png" />
 
     <!-- Bootstrap -->
     <link href="script/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -44,7 +46,7 @@
                     <div class="left_col scroll-view">
                         <div class="navbar nav_title" style="border: 0;">
                             <asp:HyperLink runat="server" href="index.html" class="site_title">
-                                <img src="images/haui_lg.png" width="45px" height="45px" alt="" /><span> Đồ án tốt nghiệp</span></asp:HyperLink>
+                                <img src="anh/haui_lg.png" width="45px" height="45px" alt="" /><span> NHÓM 4</span></asp:HyperLink>
                         </div>
 
                         <div class="clearfix"></div>
@@ -69,7 +71,7 @@
                                 <h3>Chung</h3>
                                 <ul class="nav side-menu">
                                     <li>
-                                        <asp:HyperLink runat="server" runat="server" href="Default.aspx"><i class="fa fa-home"></i>Trang chủ <span class="fa fa-chevron-down"></span></asp:HyperLink>
+                                        <asp:HyperLink runat="server" href="Default.aspx"><i class="fa fa-home"></i>Trang chủ</asp:HyperLink>
                                     </li>
                                     <li>
                                         <asp:HyperLink runat="server"><i class="fa fa-edit"></i>Tài liệu <span class="fa fa-chevron-down"></span></asp:HyperLink>
@@ -86,7 +88,7 @@
                                 <h3>Cá nhân</h3>
                                 <ul class="nav side-menu">
                                     <li>
-                                        <asp:HyperLink runat="server"><i class="fa fa-bug"></i>Thông tin cá nhân <span class="fa fa-chevron-down"></span></asp:HyperLink>
+                                        <asp:HyperLink runat="server"><i class="fa fa-bug"></i>Tài khoản<span class="fa fa-chevron-down"></span></asp:HyperLink>
                                         <ul class="nav child_menu">
                                             <li>
                                                 <asp:HyperLink runat="server" href="person information.html">Xem thông tin cá nhân</asp:HyperLink></li>
@@ -95,9 +97,9 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <asp:HyperLink runat="server" href="contact.html"><i class="fa fa-comments-o"></i><span class="fa fa-chevron-down"></span>Liên hệ</asp:HyperLink></li>
+                                        <asp:HyperLink runat="server" href="contact.html"><i class="fa fa-comments-o"></i>Liên hệ</asp:HyperLink></li>
                                     <li>
-                                        <asp:HyperLink runat="server" href="login.html"><i class="fa fa-sign-out"></i>Đăng xuất <span class="fa fa-chevron-down"></span></asp:HyperLink>
+                                        <asp:HyperLink runat="server" href="DangNhap.aspx"><i class="fa fa-sign-out"></i>Đăng xuất</asp:HyperLink>
                                     </li>
                                 </ul>
                             </div>
@@ -106,21 +108,7 @@
                         <!-- /sidebar menu -->
 
                         <!-- /menu footer buttons -->
-                        <div class="sidebar-footer hidden-small">
-                            <asp:HyperLink runat="server" data-toggle="tooltip" data-placement="top" title="Settings">
-                                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-                            </asp:HyperLink>
-                            <asp:HyperLink runat="server" data-toggle="tooltip" data-placement="top" title="FullScreen">
-                                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-                            </asp:HyperLink>
-                            <asp:HyperLink runat="server" data-toggle="tooltip" data-placement="top" title="Lock">
-                                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-                            </asp:HyperLink>
-                            <asp:HyperLink runat="server" data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
-                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-                            </asp:HyperLink>
-                        </div>
-                        
+                        <%//Bỏ %>
                         <!-- /menu footer buttons -->
                     </div>
                 </div>
@@ -134,32 +122,21 @@
                             </div>
 
                             <ul class="nav navbar-nav navbar-right">
-                                <li class="">
-                                    <asp:HyperLink runat="server" href="index.html" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                        <img src="images/avatar.jpg" alt="" />User Account
-                    <span class=" fa fa-angle-down"></span>
+                                <li>
+                                    <asp:HyperLink ID="userbar" runat="server" href="index.html" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                        <img src="anh/Profile.png" alt="" /><asp:Label ID="lbUserBar" runat="server">User Account</asp:Label>
+                                        <span class=" fa fa-angle-down"></span>
                                     </asp:HyperLink>
                                     <ul class="dropdown-menu dropdown-usermenu pull-right">
                                         <li>
-                                            <asp:HyperLink runat="server" href="person information.html">Thông tin cá nhân</asp:HyperLink></li>
-                                        <li>
-                                            <asp:HyperLink runat="server" href="setting.html">
-                                                <span class="badge bg-red pull-right">50%</span>
-                                                <span>Cài đặt</span>
-                                            </asp:HyperLink>
+                                            <asp:HyperLink runat="server" href="UserInformation.aspx">Thông tin cá nhân</asp:HyperLink>
                                         </li>
                                         <li>
-                                            <asp:HyperLink runat="server" href="contact.html">Trợ giúp</asp:HyperLink></li>
-                                        <li>
-                                            <asp:HyperLink runat="server" href="login.html"><i class="fa fa-sign-out pull-right"></i>Đăng xuất</asp:HyperLink></li>
+                                            <asp:HyperLink runat="server" href="DangNhap.aspx"><i class="fa fa-sign-out pull-right"></i>Đăng xuất</asp:HyperLink>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li align="center">
-                                    <%--<asp:HyperLink runat="server" href="index.html" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                        <asp:TextBox ID="txtSearch" runat="server"></asp:TextBox><img src="anh/Search.png" /><span class="search_init"></span>
-                                    </asp:HyperLink>--%>
-
-                                    <%/////////////////////// %>
                                     <div class="container">
                                         <div class="searchbox">
                                             <asp:TextBox ID="txtSearch" runat="server" AutoCompleteType="Search" CssClass="searchbox-input" TextMode="Search" placeholder="Tìm kiếm..."></asp:TextBox>

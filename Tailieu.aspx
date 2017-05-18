@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <asp:DataGrid runat="server" ID="list" CssClass="ds" CellPadding="4" ForeColor="#333333" AutoGenerateColumns="false" 
         AllowPaging="true" AllowSorting="true">
-        <AlternatingItemStyle BackColor="White" />
+        <asp:HyperLinklternatingItemStyle BackColor="White" />
         <EditItemStyle BackColor="#7C6F57" />
         <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
         <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />

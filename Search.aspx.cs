@@ -18,5 +18,7 @@ public partial class Search : System.Web.UI.Page
         {
             lbError.Text = param;
         }
+        sql.SelectCommand = "select * from Users where username like '%"+param+ "%' or fullname like '%" + param + "%'";
+        //sql.SelectParameters.Add("str", param);
     }
 }

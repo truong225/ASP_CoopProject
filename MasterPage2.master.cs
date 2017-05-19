@@ -9,13 +9,14 @@ public partial class MasterPage2 : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["userID"] != null)
+        if (Session["userName"] == null)
         {
             userbar.Visible = false;
         }
         else
         {
             userbar.Visible = true;
+            lbUser.Text = (string)Session["userName"];
         }
     }
 
@@ -41,6 +42,14 @@ public partial class MasterPage2 : System.Web.UI.MasterPage
         get
         {
             return this.lbUserBar;
+        }
+    }
+
+    public Label LabelUser
+    {
+        get
+        {
+            return this.lbUser;
         }
     }
 }

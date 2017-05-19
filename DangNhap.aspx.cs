@@ -9,10 +9,7 @@ public partial class DangNhap : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if(Session["userID"] != null)
-        {
-            return;
-        }
+        Session["userName"] = null;
     }
 
     protected void btnLogin_Click(object sender, EventArgs e)
@@ -28,7 +25,7 @@ public partial class DangNhap : System.Web.UI.Page
         }
         else
         {
-            Session["userID"] = user.ID;
+            Session["userName"] = user.Username;
             if (user.Permission == 0)
                 Response.Redirect("Default.aspx");
             else

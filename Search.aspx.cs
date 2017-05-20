@@ -15,7 +15,8 @@ public partial class Search : System.Web.UI.Page
     {
         var param = Convert.ToString(Request.QueryString["string"]);
         string sqlStr = "select * from Doan where tendoan like '%" + param + "%'";
-        if (string.IsNullOrWhiteSpace(param) || data.ExecuteDataTable(sqlStr).Rows.Count == 0)
+        DataTable table = data.ExecuteDataTable(sqlStr);
+        if (string.IsNullOrWhiteSpace(param) || table.Rows.Count == 0)
         {
             lbError.Text = "Không tìm thấy yêu cầu";
             lsTim.DataSource = null;
@@ -24,7 +25,9 @@ public partial class Search : System.Web.UI.Page
         else
         {
             lbError.Text = "Kết quả tìm kiếm cho: \"" + param + "\"";
-            sql.SelectCommand = sqlStr;
+            //sql.SelectCommand = sqlStr;
+            lsTim.DataSource = table;
+            DataBind();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="DangKy.aspx.cs" Inherits="DangKy" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage2.master" AutoEventWireup="true" CodeFile="DangKy.aspx.cs" Inherits="DangKy" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style type="text/css">
@@ -13,33 +13,47 @@
             <td align="right" class="auto-style7">
                 <asp:Label runat="server">Tên tài khoản </asp:Label><font color="red">*</font></td>
             <td align="left">
-                <asp:TextBox ID="txtTen" runat="server" Width="300px"></asp:TextBox>
+                <asp:TextBox CssClass="form-control" ID="txtTen" runat="server" Width="300px"></asp:TextBox>
                 <asp:RequiredFieldValidator runat="server" ControlToValidate="txtTen"></asp:RequiredFieldValidator>
+                <br />
+            </td>
+            <td rowspan="6" style="width: 300px">
+                <asp:Image runat="server" ID="imgAvatar" ImageUrl="anh/noavatar.png" ImageAlign="AbsMiddle" Width="250px" Height="250px"
+                    BorderColor="Black" BorderWidth="1px" />
+                <asp:FileUpload ID="fileAvatar" runat="server"/><asp:Button runat="server" Text="Tải ảnh"/>
             </td>
         </tr>
         <tr>
             <td align="right" class="auto-style7">
                 <asp:Label runat="server">Mật khẩu </asp:Label><font color="red">*</font></td>
             <td align="left">
-                <asp:TextBox ID="txtPass" runat="server" Width="300px"></asp:TextBox></td>
+                <asp:TextBox CssClass="form-control" ID="txtPass" runat="server" Width="300px"></asp:TextBox>
+                <br />
+            </td>
         </tr>
         <tr>
             <td align="right" class="auto-style7">
                 <asp:Label runat="server">Nhập lại mật khẩu </asp:Label><font color="red">*</font></td>
             <td align="left">
-                <asp:TextBox ID="txtRePass" runat="server" Width="300px"></asp:TextBox></td>
+                <asp:TextBox CssClass="form-control" ID="txtRePass" runat="server" Width="300px"></asp:TextBox>
+                <br />
+            </td>
         </tr>
         <tr>
             <td align="right" class="auto-style7">
                 <asp:Label runat="server">Địa chỉ email </asp:Label><font color="red">*</font></td>
             <td align="left">
-                <asp:TextBox ID="txtEmail" runat="server" Width="300px"></asp:TextBox></td>
+                <asp:TextBox CssClass="form-control" ID="txtEmail" runat="server" Width="300px"></asp:TextBox>
+                <br />
+            </td>
         </tr>
         <tr>
             <td align="right" class="auto-style7">
                 <asp:Label runat="server">Nhập mã xác nhận </asp:Label><font color="red">*</font></td>
             <td align="left">
-                <asp:TextBox ID="txtComfirm" runat="server" Width="300px"></asp:TextBox></td>
+                <asp:TextBox CssClass="form-control" ID="txtComfirm" runat="server" Width="300px"></asp:TextBox>
+                <br />
+            </td>
         </tr>
         <tr>
             <td align="right" class="auto-style7"></td>

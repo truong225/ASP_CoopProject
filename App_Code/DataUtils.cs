@@ -151,4 +151,12 @@ public class DataUtils
         adapter.Fill(table);
         return table;
     }
+
+    public DataTable ExecuteDataTable(string sql)
+    {
+        DataTable table = new DataTable();
+        SqlDataAdapter adapter = new SqlDataAdapter(sql, conn);
+        adapter.Fill(table);
+        return table;
+    }
 }

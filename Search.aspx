@@ -6,13 +6,13 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <div align="center">
-        <p>Kết quả tìm kiếm cho: "<asp:Label ID="lbError" runat="server" ForeColor="Red" Font-Size="16px" Font-Italic="true"></asp:Label>"</p>
+        <asp:Label ID="lbError" runat="server" ForeColor="Red" Font-Size="16px" Font-Italic="true"></asp:Label>
         <asp:DataGrid ID="lsTim" runat="server" Width="80%" DataSourceID="sql" CssClass="table table-striped table-bordered" 
-            AllowPaging="true" AutoGenerateColumns="false" AllowSorting="true">
-            <Columns>
+            AllowPaging="true" AutoGenerateColumns="true" AllowSorting="true">
+            <%--<Columns>
                 <asp:BoundColumn HeaderText="Tên người dùng" DataField="username"></asp:BoundColumn>
                 <asp:BoundColumn HeaderText="Họ và tên" DataField="fullname"></asp:BoundColumn>
-            </Columns>
+            </Columns>--%>
         </asp:DataGrid>
         <asp:SqlDataSource ID="sql" runat="server" 
             ConnectionString="Data Source=MYPC\MSSQLSERVER_1;Initial Catalog=qldoan_asp;Integrated Security=true">

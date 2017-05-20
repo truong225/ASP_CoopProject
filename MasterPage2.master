@@ -63,15 +63,15 @@
                                 <h3>Chung</h3>
                                 <ul class="nav side-menu">
                                     <li>
-                                        <asp:HyperLink runat="server" href="Default.aspx"><i class="fa fa-home"></i>Trang chủ</asp:HyperLink>
+                                        <asp:HyperLink runat="server" href="Default.aspx"><i class="fa fa-home"></i>Trang chủ<span class="fa fa-chevron-down"></span></asp:HyperLink>
                                     </li>
                                     <li>
                                         <asp:HyperLink runat="server"><i class="fa fa-edit"></i>Tài liệu <span class="fa fa-chevron-down"></span></asp:HyperLink>
                                         <ul class="nav child_menu">
                                             <li>
-                                                <asp:HyperLink runat="server" href="task.html">Danh sách</asp:HyperLink></li>
+                                                <asp:HyperLink runat="server" href="">Danh sách</asp:HyperLink></li>
                                             <li>
-                                                <asp:HyperLink runat="server" href="rate-GV.html">Upload</asp:HyperLink></li>
+                                                <asp:HyperLink runat="server" href="">Upload</asp:HyperLink></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -83,9 +83,9 @@
                                         <asp:HyperLink runat="server"><i class="fa fa-bug"></i>Tài khoản<span class="fa fa-chevron-down"></span></asp:HyperLink>
                                         <ul class="nav child_menu">
                                             <li>
-                                                <asp:HyperLink runat="server" href="person information.html">Xem thông tin cá nhân</asp:HyperLink></li>
+                                                <asp:HyperLink runat="server" href="#">Xem thông tin cá nhân</asp:HyperLink></li>
                                             <li>
-                                                <asp:HyperLink runat="server" href="change_Password.html">Đổi mật khẩu</asp:HyperLink></li>
+                                                <asp:HyperLink runat="server" href="#">Đổi mật khẩu</asp:HyperLink></li>
                                         </ul>
                                     </li>
                                     <li>

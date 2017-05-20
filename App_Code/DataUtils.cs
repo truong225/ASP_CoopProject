@@ -159,4 +159,12 @@ public class DataUtils
         adapter.Fill(table);
         return table;
     }
+
+    public void ExeNonQuery(string sql)
+    {
+        conn.Open();
+        SqlCommand cmd = new SqlCommand(sql, conn);
+        cmd.ExecuteNonQuery();
+        conn.Close();
+    }
 }

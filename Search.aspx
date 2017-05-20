@@ -8,15 +8,19 @@
     <div align="center">
         <asp:Label ID="lbError" runat="server" ForeColor="Red" Font-Size="16px" Font-Italic="true"></asp:Label>
         <asp:DataGrid ID="lsTim" runat="server" Width="80%" CssClass="table table-striped table-bordered" 
-            AllowPaging="true" AutoGenerateColumns="true" AllowSorting="true">
-            <%--<Columns>
-                <asp:BoundColumn HeaderText="Tên người dùng" DataField="username"></asp:BoundColumn>
-                <asp:BoundColumn HeaderText="Họ và tên" DataField="fullname"></asp:BoundColumn>
-            </Columns>--%>
+            AllowPaging="true" AutoGenerateColumns="false" AllowSorting="true">
+            <Columns>
+                <asp:BoundColumn HeaderText="Đồ án" DataField="tendoan"></asp:BoundColumn>
+                <asp:BoundColumn HeaderText="Người đăng" DataField="username"></asp:BoundColumn>
+                <asp:BoundColumn HeaderText="Mô tả" DataField="mota"></asp:BoundColumn>
+                <asp:TemplateColumn>
+                    <ItemTemplate>
+                        <asp:LinkButton runat="server" Text="Download" OnClick="DownloadFile" ForeColor="Blue"
+                            CommandArgument='<%#Eval("tenfile")%>'></asp:LinkButton>
+                    </ItemTemplate>
+                </asp:TemplateColumn>
+            </Columns>
         </asp:DataGrid>
-        <%--<asp:SqlDataSource ID="sql" runat="server" 
-            ConnectionString="Data Source=MYPC\MSSQLSERVER_1;Initial Catalog=qldoan_asp;Integrated Security=true">
-        </asp:SqlDataSource>--%>
     </div>
 </asp:Content>
 

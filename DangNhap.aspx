@@ -17,10 +17,10 @@
                     <section class="login_content" align="center">
                         <h1>Đăng nhập</h1>
                         <div>
-                            <asp:TextBox runat="server" ID="username" type="text" class="form-control" placeholder="Username" required=""></asp:TextBox>
+                            <asp:TextBox runat="server" ID="username" CssClass="form-control" placeholder="Username" required=""></asp:TextBox>
                         </div>
                         <div>
-                            <asp:TextBox runat="server" ID="password" type="password" class="form-control" placeholder="Password" required=""></asp:TextBox>
+                            <asp:TextBox runat="server" ID="password" TextMode="Password" CssClass="form-control" placeholder="Password" required=""></asp:TextBox>
                         </div>
                         <div>
                             <asp:Button BorderStyle="Solid" runat="server" ID="btnLogin" Text="Đăng nhập" OnClick="btnLogin_Click"

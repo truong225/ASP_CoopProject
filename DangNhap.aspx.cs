@@ -15,7 +15,7 @@ public partial class DangNhap : System.Web.UI.Page
     protected void btnLogin_Click(object sender, EventArgs e)
     {
         string loginName = username.Text;
-        string pass = password.Text;
+        string pass = EncryptSecurity.EncryptMD5Hash(password.Text);
 
         DataUtils data = new DataUtils();
         User user = data.checkLogin(loginName, pass);

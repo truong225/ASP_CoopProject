@@ -129,7 +129,7 @@ public class DataUtils
         return doan;
     }
 
-    public void addUser(User user)
+    public void AddUser(User user)
     {
         conn.Open();
         string sql = "insert into Users values(@username,@password,@fullname,@gioitinh,@email)";
@@ -160,10 +160,17 @@ public class DataUtils
         return table;
     }
 
-    public void ExeNonQuery(string sql)
+    public void AddUser(string username, string userpass, string fullname, string gioitinh, string email, string avatar)
     {
         conn.Open();
+        string sql = "insert into Users values(@username,@userpass,@fullname,@gioitinh,@email,@avatar,0,1,1)";
         SqlCommand cmd = new SqlCommand(sql, conn);
+        cmd.Parameters.AddWithValue("username", username);
+        cmd.Parameters.AddWithValue("userpass", userpass);
+        cmd.Parameters.AddWithValue("fullname", fullname);
+        cmd.Parameters.AddWithValue("gioitinh", gioitinh);
+        cmd.Parameters.AddWithValue("email", email);
+        cmd.Parameters.AddWithValue("avatar", avatar);
         cmd.ExecuteNonQuery();
         conn.Close();
     }

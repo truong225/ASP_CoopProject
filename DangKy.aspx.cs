@@ -15,6 +15,12 @@ public partial class DangKy : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
+        txtTen.Attributes.Add("required", "");
+        txtPass.Attributes.Add("required", "");
+        txtRePass.Attributes.Add("required", "");
+        txtFullname.Attributes.Add("required", "");
+        txtEmail.Attributes.Add("required", "");
+        /////////////
         temp = new DirectoryInfo(Server.MapPath("~/"));
         avafile = "noavatar.png";
         imgAvatar.ImageUrl = "~/anh/" + avafile;
@@ -49,11 +55,12 @@ public partial class DangKy : System.Web.UI.Page
             //Upload anh avatar len thu muc temp
             System.IO.Directory.CreateDirectory(Server.MapPath("~/temp/" + DateTime.Now.ToString("dd-MM-yyyy_HHmmss")));
             string path = DateTime.Now.ToString("dd-MM-yyyy_HHmmss") + "/" + fileAvatar.FileName;
-            avafile = fileAvatar.FileName;
+            Session["source"] = path.Split('/')[0];
+            Session["avaImg"] = fileAvatar.FileName;
             fileAvatar.PostedFile.SaveAs(Server.MapPath("~/temp/" + path));
             imgAvatar.ImageUrl = "~/temp/" + path;
+            Session["tempPath"] = path;
         }
-        txtPass.Text = passTemp;
     }
 
     protected void btnRegister_Click(object sender, EventArgs e)
@@ -67,12 +74,25 @@ public partial class DangKy : System.Web.UI.Page
                 gioitinhid = "2";
 
             string pass = EncryptSecurity.EncryptMD5Hash(txtPass.Text);
-            
+            if (Session["avaImg"] != null)
+            {
+                avafile = (string)Session["avaImg"];
+
+                string path = (string)Session["tempPath"];
+                string src = Server.MapPath("~/");
+                string sourceFile = System.IO.Path.Combine(src + "temp\\" + (string)Session["source"], avafile);
+                System.IO.Directory.CreateDirectory(src + "anh\\" + txtTen.Text);
+                string destFile = System.IO.Path.Combine(src + "anh\\" + txtTen.Text, avafile);
+                System.IO.File.Copy(sourceFile, destFile, true);
+            }
+            else
+            {
+                avafile = "noavatar.png";
+            }
+
             DataUtils data = new DataUtils();
             data.AddUser(txtTen.Text, pass, txtFullname.Text, gioitinhid, txtEmail.Text, avafile);
 
-            string script = "alert('Đăng ký thành công!')";
-            ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "AlertMessage", script, true);
             Thread.Sleep(5000);
 
             Response.Redirect("DangNhap.aspx");

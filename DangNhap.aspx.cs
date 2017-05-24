@@ -10,6 +10,7 @@ public partial class DangNhap : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         Session["userName"] = null;
+        Master.LinkLog.Text = "Đăng nhập";
     }
 
     protected void btnLogin_Click(object sender, EventArgs e)

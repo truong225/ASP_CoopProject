@@ -9,10 +9,10 @@ public partial class _Default : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["userID"] != null)
+        if (Session["userName"] != null)
         {
             Master.UserBar.Visible = true;
-            Master.LabelUser.Text = " " + (string)Session["userName"];
+            Master.LabelUserBar.Text = " " + (string)Session["userName"];
         }
         else
         {

@@ -80,18 +80,21 @@
                                 <h3>Cá nhân</h3>
                                 <ul class="nav side-menu">
                                     <li>
-                                        <asp:HyperLink runat="server"><i class="fa fa-bug"></i>Tài khoản<span class="fa fa-chevron-down"></span></asp:HyperLink>
+                                        <asp:HyperLink ID="linkTK" runat="server"><i class="fa fa-bug"></i>Tài khoản<span class="fa fa-chevron-down"></span></asp:HyperLink>
                                         <ul class="nav child_menu">
                                             <li>
-                                                <asp:HyperLink runat="server" href="#">Xem thông tin cá nhân</asp:HyperLink></li>
+                                                <asp:HyperLink runat="server" href="UserInformation.aspx">Xem thông tin cá nhân</asp:HyperLink></li>
                                             <li>
-                                                <asp:HyperLink runat="server" href="#">Đổi mật khẩu</asp:HyperLink></li>
+                                                <asp:HyperLink runat="server" href="ChangePassword.aspx">Đổi mật khẩu</asp:HyperLink></li>
                                         </ul>
                                     </li>
                                     <li>
-                                        <asp:HyperLink runat="server" href="contact.html"><i class="fa fa-comments-o"></i>Liên hệ</asp:HyperLink></li>
+                                        <asp:HyperLink runat="server" href="LienHe.aspx"><i class="fa fa-comments-o"></i>Liên hệ</asp:HyperLink></li>
                                     <li>
-                                        <asp:HyperLink runat="server" href="DangNhap.aspx"><i class="fa fa-sign-out"></i>Đăng xuất</asp:HyperLink>
+                                        <asp:HyperLink ID="linkLogMenu" runat="server" href="DangNhap.aspx"><i class="fa fa-sign-out"></i></asp:HyperLink>
+                                    </li>
+                                    <li>
+                                        <asp:HyperLink ID="linkRegis" runat="server" href="DangKy.aspx"><i class="fa fa-sign-out"></i>Đăng ký</asp:HyperLink>
                                     </li>
                                 </ul>
                             </div>
@@ -116,7 +119,7 @@
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
                                     <asp:HyperLink ID="userbar" runat="server" href="index.html" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                        <img src="anh/Profile.png" alt="" /><asp:Label ID="lbUserBar" runat="server">User Account</asp:Label>
+                                        <img src="anh/Profile.png" alt="" /><asp:Label ID="lbUserBar" runat="server"></asp:Label>
                                         <span class=" fa fa-angle-down"></span>
                                     </asp:HyperLink>
                                     <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -124,14 +127,14 @@
                                             <asp:HyperLink runat="server" href="UserInformation.aspx">Thông tin cá nhân</asp:HyperLink>
                                         </li>
                                         <li>
-                                            <asp:HyperLink runat="server" href="DangNhap.aspx"><i class="fa fa-sign-out pull-right"></i>Đăng xuất</asp:HyperLink>
+                                            <asp:HyperLink ID="linkLog" runat="server" href="DangNhap.aspx"><i class="fa fa-sign-out pull-right"></i></asp:HyperLink>
                                         </li>
                                     </ul>
                                 </li>
-                                <li align="center">
+                                <li style="text-align:center">
                                     <div class="container">
                                         <div class="searchbox">
-                                            <asp:TextBox ID="txtSearch" runat="server" AutoCompleteType="Search" CssClass="searchbox-input" TextMode="Search" placeholder="Tìm kiếm..."></asp:TextBox>
+                                            <asp:TextBox ID="txtSearch" runat="server" AutoCompleteType="Search" CssClass="searchbox-input" TextMode="Search"></asp:TextBox>
                                             <span class="searchbox-icon">
                                                 <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/anh/Search.png" OnClick="ImageButton1_Click" /></span>
                                         </div>

@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage2.master" AutoEventWireup="true" CodeFile="DangNhap.aspx.cs" Inherits="DangNhap" %>
+<%@ MasterType VirtualPath="~/MasterPage2.master" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -12,9 +13,9 @@
             <a class="hiddenanchor" id="signup"></a>
             <a class="hiddenanchor" id="signin"></a>
 
-            <div class="login_wrapper" align="center">
-                <div class="animate form login_form" align="center">
-                    <section class="login_content" align="center">
+            <div class="login_wrapper" style="text-align=center">
+                <div class="animate form login_form" style="text-align=center">
+                    <section class="login_content" style="text-align=center">
                         <h1>Đăng nhập</h1>
                         <div>
                             <asp:TextBox runat="server" ID="username" CssClass="form-control" placeholder="Username" required=""></asp:TextBox>

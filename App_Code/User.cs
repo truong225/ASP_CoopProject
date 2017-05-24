@@ -12,8 +12,9 @@ public class User
     public string Username { get; set; }
     public string Password { get; set; }
     public string FullName { get; set; }
-    public string GioiTinh { get; set; }
+    public int GioiTinh { get; set; }
     public string Email { get; set; }
+    public string Avatar { get; set; }
     public int Permission { get; set; }
     public bool isActive { get; set; }
     public bool isEnable { get; set; }

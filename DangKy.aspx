@@ -12,10 +12,11 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <table style="width: 100%;">
         <tr>
-            <td align="right" class="auto-style7">
+            <td style="text-align: right" class="auto-style7">
                 <asp:Label runat="server">Tên tài khoản </asp:Label><font color="red">* </font></td>
-            <td align="left">
-                <asp:TextBox CssClass="form-control" ID="txtTen" runat="server" Width="300px" required=""></asp:TextBox>
+            <td style="text-align: left">
+                <asp:TextBox CssClass="form-control" ID="txtTen" runat="server" Width="300px"></asp:TextBox>
+                <asp:Label ID="errorMes" runat="server" ForeColor="DarkRed"></asp:Label>
                 <br />
             </td>
             <td rowspan="6" style="width: 300px">
@@ -26,34 +27,34 @@
             </td>
         </tr>
         <tr>
-            <td align="right" class="auto-style7">
+            <td style="text-align: right" class="auto-style7">
                 <asp:Label runat="server">Mật khẩu </asp:Label><font color="red">* </font></td>
-            <td align="left">
-                <asp:TextBox CssClass="form-control" ID="txtPass" runat="server" Width="300px" required="" TextMode="Password"></asp:TextBox>
+            <td style="text-align: left">
+                <asp:TextBox CssClass="form-control" ID="txtPass" runat="server" Width="300px" TextMode="Password"></asp:TextBox>
                 <br />
             </td>
         </tr>
         <tr>
-            <td align="right" class="auto-style7">
+            <td style="text-align: right" class="auto-style7">
                 <asp:Label runat="server">Nhập lại mật khẩu </asp:Label><font color="red">* </font></td>
-            <td align="left">
-                <asp:TextBox CssClass="form-control" ID="txtRePass" runat="server" Width="300px" required="" TextMode="Password"></asp:TextBox>
+            <td style="text-align: left">
+                <asp:TextBox CssClass="form-control" ID="txtRePass" runat="server" Width="300px" TextMode="Password"></asp:TextBox>
                 <asp:CompareValidator ID="cmpValid" runat="server" ControlToValidate="txtRePass" ControlToCompare="txtPass" ErrorMessage="Nhập lại mật khẩu" ForeColor="DarkRed" SetFocusOnError="true"></asp:CompareValidator>
                 <br />
             </td>
         </tr>
         <tr>
-            <td align="right" class="auto-style7">
+            <td style="text-align: right" class="auto-style7">
                 <asp:Label runat="server">Họ và tên </asp:Label><font color="red">* </font></td>
-            <td align="left">
-                <asp:TextBox CssClass="form-control" ID="txtFullname" runat="server" Width="300px" required=""></asp:TextBox>
+            <td style="text-align: left">
+                <asp:TextBox CssClass="form-control" ID="txtFullname" runat="server" Width="300px"></asp:TextBox>
                 <br />
             </td>
         </tr>
         <tr>
-            <td align="right" class="auto-style7">
+            <td style="text-align: right" class="auto-style7">
                 <asp:Label runat="server">Giới tính </asp:Label><font color="red">* </font></td>
-            <td align="left">
+            <td style="text-align: left">
                 <asp:DropDownList ID="drpGender" runat="server" DataSourceID="sqlGioiTinh" DataValueField="gender" CssClass="form-control" Width="300px">
                 </asp:DropDownList>
                 <asp:SqlDataSource ID="sqlGioiTinh" runat="server" SelectCommand="select *  from gioitinh"
@@ -62,26 +63,18 @@
             </td>
         </tr>
         <tr>
-            <td align="right" class="auto-style7">
+            <td style="text-align: right" class="auto-style7">
                 <asp:Label runat="server">Địa chỉ email </asp:Label><font color="red">* </font></td>
-            <td align="left">
-                <asp:TextBox CssClass="form-control" ID="txtEmail" runat="server" Width="300px" required="" AutoCompleteType="Email" TextMode="Email"></asp:TextBox>
+            <td style="text-align: left">
+                <asp:TextBox CssClass="form-control" ID="txtEmail" runat="server" Width="300px" AutoCompleteType="Email" TextMode="Email"></asp:TextBox>
                 <br />
             </td>
         </tr>
-        <%--<tr>
-            <td align="right" class="auto-style7">
-                <asp:Label runat="server">Nhập mã xác nhận </asp:Label><font color="red">* </font></td>
-            <td align="left">
-                <asp:TextBox CssClass="form-control" ID="txtComfirm" runat="server" Width="300px" required=""></asp:TextBox>
-                <br />
-            </td>
-        </tr>--%>
         <tr>
-            <td align="right" class="auto-style7"></td>
-            <td align="left">
+            <td style="text-align: right" class="auto-style7"></td>
+            <td style="text-align: left">
                 <asp:Button ID="btnRegister" runat="server" Text="Đăng ký" OnClick="btnRegister_Click" />
-                <asp:TextBox runat="server" ID="ms" Text="ssss"></asp:TextBox>
+                <asp:Label runat="server" ID="ms"></asp:Label>
             </td>
         </tr>
     </table>

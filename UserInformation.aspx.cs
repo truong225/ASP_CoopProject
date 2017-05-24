@@ -15,10 +15,10 @@ public partial class User_UserInformation : System.Web.UI.Page
         User u = data.getUser(id);
         if (u != null)
         {
-            txtUser.Text = u.Username;
-            txtGender.Text = u.GioiTinh;
-            txtFullname.Text = u.FullName;
-            txtEmail.Text = u.Email;
+        //    txtUser.Text = u.Username;
+        //    txtGender.Text = u.GioiTinh;
+        //    txtFullname.Text = u.FullName;
+        //    txtEmail.Text = u.Email;
         }
     }
 
@@ -37,6 +37,5 @@ public partial class User_UserInformation : System.Web.UI.Page
     protected void Button2_Click(object sender, EventArgs e)
     {
         User u = new User();
-        data.capNhatUser(u);
     }
 }

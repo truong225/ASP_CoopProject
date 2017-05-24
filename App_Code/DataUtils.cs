@@ -27,11 +27,11 @@ public class DataUtils
     {
         try
         {
-            string sql = "Select * from Users where username=@username and password=@password";
+            string sql = "Select * from Users where username=@username and userpass=@userpass";
             conn.Open();
             SqlCommand cmd = new SqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("username", username);
-            cmd.Parameters.AddWithValue("password", password);
+            cmd.Parameters.AddWithValue("userpass", password);
             SqlDataReader reader = cmd.ExecuteReader();
 
             if (!reader.HasRows)
@@ -42,14 +42,21 @@ public class DataUtils
             {
                 user.ID = Convert.ToInt32(reader["id"]);
                 user.Username = Convert.ToString(reader["username"]);
-                user.Password = Convert.ToString(reader["password"]);
+                user.Password = Convert.ToString(reader["userpass"]);
                 user.FullName = Convert.ToString(reader["fullname"]);
+                user.GioiTinh = Convert.ToInt32(reader["gioitinh"]);
                 user.Email = Convert.ToString(reader["email"]);
+                user.Avatar = Convert.ToString(reader["avatar"]);
+                //Thiếu trường => kết quả return là null
                 user.Permission = Convert.ToInt32(reader["permission"]);
                 user.isActive = Convert.ToBoolean(reader["isActive"]);
                 user.isEnable = Convert.ToBoolean(reader["isEnable"]);
             }
             conn.Close();
+            if (user.isEnable & user.isActive)
+            {
+
+            }
             return user;
         }
         catch
@@ -171,6 +178,14 @@ public class DataUtils
         cmd.Parameters.AddWithValue("gioitinh", gioitinh);
         cmd.Parameters.AddWithValue("email", email);
         cmd.Parameters.AddWithValue("avatar", avatar);
+        cmd.ExecuteNonQuery();
+        conn.Close();
+    }
+
+    public void ExeNonQuery(string sql)
+    {
+        conn.Open();
+        SqlCommand cmd = new SqlCommand(sql, conn);
         cmd.ExecuteNonQuery();
         conn.Close();
     }

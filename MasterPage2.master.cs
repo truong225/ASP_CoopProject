@@ -9,14 +9,22 @@ public partial class MasterPage2 : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        txtSearch.Attributes.Add("placeholder", "Tìm kiếm ...");
         if (Session["userName"] == null)
         {
             userbar.Visible = false;
+            linkLog.Text = "Đăng nhập";
+            linkLogMenu.Text = "Đăng nhập";
+            linkTK.Visible = false;
+            linkRegis.Visible = true;
         }
         else
         {
             userbar.Visible = true;
             lbUser.Text = (string)Session["userName"];
+            linkLog.Text = "Đăng xuất";
+            linkLogMenu.Text = "Đăng xuất";
+            linkRegis.Visible = false;
         }
     }
 
@@ -50,6 +58,22 @@ public partial class MasterPage2 : System.Web.UI.MasterPage
         get
         {
             return this.lbUser;
+        }
+    }
+
+    public HyperLink LinkLog
+    {
+        get
+        {
+            return this.linkLog;
+        }
+    }
+
+    public HyperLink LinkLogMenu
+    {
+        get
+        {
+            return this.linkLogMenu;
         }
     }
 }
